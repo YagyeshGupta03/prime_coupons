@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "538522588171",
+    "project_id": "prime-coupons-app",
+    "storage_bucket": "prime-coupons-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538522588171:android:3ebb848901321f4240230e",
+        "android_client_info": {
+          "package_name": "com.app.clipeate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1V3DdFeBwFBR47b1-XNkfiedTkOiKds0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538522588171:android:d7d038c2f0b4a8d140230e",
+        "android_client_info": {
+          "package_name": "com.app.prime_coupons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1V3DdFeBwFBR47b1-XNkfiedTkOiKds0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
