@@ -269,7 +269,7 @@ class _AllDealsState extends State<AllDeals> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisExtent: 360,
+                            mainAxisExtent: 380,
                             mainAxisSpacing: 10.0,
                           ),
                           shrinkWrap: true,
@@ -444,7 +444,7 @@ class _UpcomingState extends State<Upcoming> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisExtent: 365,
+                            mainAxisExtent: 380,
                             mainAxisSpacing: 10.0,
                           ),
                           shrinkWrap: true,
@@ -762,7 +762,7 @@ class _Under10State extends State<Under10> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisExtent: 360,
+                            mainAxisExtent: 380,
                             mainAxisSpacing: 10.0,
                           ),
                           shrinkWrap: true,
@@ -928,7 +928,7 @@ class _TrendingState extends State<Trending> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisExtent: 360,
+                            mainAxisExtent: 380,
                             mainAxisSpacing: 10.0,
                           ),
                           shrinkWrap: true,
@@ -1098,7 +1098,7 @@ class _LatestState extends State<Latest> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisExtent: 360,
+                            mainAxisExtent: 380,
                             mainAxisSpacing: 10.0,
                           ),
                           shrinkWrap: true,

@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisExtent: 360,
+                      mainAxisExtent: 380,
                       mainAxisSpacing: 10.0,
                     ),
                     shrinkWrap: true,
@@ -330,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisExtent: 360,
+                      mainAxisExtent: 380,
                       mainAxisSpacing: 10.0,
                     ),
                     shrinkWrap: true,
@@ -391,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisExtent: 365,
+                      mainAxisExtent: 380,
                       mainAxisSpacing: 10.0,
                     ),
                     shrinkWrap: true,
@@ -454,7 +454,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisExtent: 360,
+                      mainAxisExtent: 380,
                       mainAxisSpacing: 10.0,
                     ),
                     shrinkWrap: true,

@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:clipeate_project/controllers/credential_controller.dart';
+import 'package:clipeate_project/screens/setting/delete_account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -49,42 +50,37 @@ class _SettingLogScreenState extends State<SettingLogScreen> {
         ),
         centerTitle: true,
         actions: [
-          MenuButton(
-              home: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(
-                            newScreen: HomeScreen())));
-              },
-              allDeals: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
+          MenuButton(home: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const DashboardScreen(newScreen: HomeScreen())));
+          }, allDeals: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
                         const DashboardScreen(newScreen: AllDeals())));
-              },
-              trending: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
+          }, trending: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
                         const DashboardScreen(newScreen: Trending())));
-              },
-              upcoming: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
+          }, upcoming: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
                         const DashboardScreen(newScreen: Upcoming())));
-              },
-              under10: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
+          }, under10: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
                         const DashboardScreen(newScreen: Under10())));
-              }),
+          }),
         ],
       ),
       body: SingleChildScrollView(
@@ -112,7 +108,7 @@ class _SettingLogScreenState extends State<SettingLogScreen> {
               title: S.of(context).termsAndConditions,
               onTap: () async {
                 if (!await launchUrl(Uri.parse(termsLink))) {
-                throw Exception('Could not launch $termsLink');
+                  throw Exception('Could not launch $termsLink');
                 }
               },
             ),
@@ -121,7 +117,7 @@ class _SettingLogScreenState extends State<SettingLogScreen> {
               title: S.of(context).privacyPolicy,
               onTap: () async {
                 if (!await launchUrl(Uri.parse(privacyLink))) {
-                throw Exception('Could not launch $privacyLink');
+                  throw Exception('Could not launch $privacyLink');
                 }
               },
             ),
@@ -180,7 +176,8 @@ class _SettingLogScreenState extends State<SettingLogScreen> {
                                     await Navigator.pushNamed(
                                         context, '/dashboard');
                                     Fluttertoast.showToast(
-                                        msg: S.of(context).signedOutSuccessfully,
+                                        msg:
+                                            S.of(context).signedOutSuccessfully,
                                         gravity: ToastGravity.SNACKBAR,
                                         backgroundColor: Colors.green);
                                   },
@@ -192,6 +189,13 @@ class _SettingLogScreenState extends State<SettingLogScreen> {
                         },
                       )
                     ]);
+              },
+            ),
+            SettingCard(
+              icon: Icons.delete_outline,
+              title: S.of(context).deleteAccount,
+              onTap: () async {
+                Get.to(() => const DeleteScreen());
               },
             ),
           ],
@@ -235,42 +239,47 @@ class _SettingScreenState extends State<SettingScreen> {
         ),
         centerTitle: true,
         actions: [
-          MenuButton(
-              home: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(
-                            newScreen: HomeScreen())));
-              },
-              allDeals: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                        const DashboardScreen(newScreen: AllDeals())));
-              },
-              trending: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                        const DashboardScreen(newScreen: Trending())));
-              },
-              upcoming: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                        const DashboardScreen(newScreen: Upcoming())));
-              },
-              under10: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                        const DashboardScreen(newScreen: Under10())));
-              }),
+          MenuButton(home: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const DashboardScreen(newScreen: HomeScreen()),
+              ),
+            );
+          }, allDeals: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const DashboardScreen(newScreen: AllDeals()),
+              ),
+            );
+          }, trending: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const DashboardScreen(newScreen: Trending()),
+              ),
+            );
+          }, upcoming: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const DashboardScreen(newScreen: Upcoming()),
+              ),
+            );
+          }, under10: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const DashboardScreen(newScreen: Under10()),
+              ),
+            );
+          }),
         ],
       ),
       body: SingleChildScrollView(
@@ -298,7 +307,7 @@ class _SettingScreenState extends State<SettingScreen> {
               title: S.of(context).termsAndConditions,
               onTap: () async {
                 if (!await launchUrl(Uri.parse(termsLink))) {
-                throw Exception('Could not launch $termsLink');
+                  throw Exception('Could not launch $termsLink');
                 }
               },
             ),
@@ -307,7 +316,7 @@ class _SettingScreenState extends State<SettingScreen> {
               title: S.of(context).privacyPolicy,
               onTap: () async {
                 if (!await launchUrl(Uri.parse(privacyLink))) {
-                throw Exception('Could not launch $privacyLink');
+                  throw Exception('Could not launch $privacyLink');
                 }
               },
             ),
@@ -327,6 +336,9 @@ class _SettingScreenState extends State<SettingScreen> {
   }
 }
 
+//
+//
+//
 class SettingCard extends StatefulWidget {
   const SettingCard({
     super.key,

@@ -281,7 +281,7 @@ class _FilterResultScreenState extends State<FilterResultScreen> {
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    mainAxisExtent: 360,
+                                    mainAxisExtent: 380,
                                     mainAxisSpacing: 10.0,
                                   ),
                                   shrinkWrap: true,

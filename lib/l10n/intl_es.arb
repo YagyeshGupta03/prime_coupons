@@ -96,7 +96,11 @@
   "afterTwoMonths": "Luego de dos meses",
   "afterFewMonths":"Luego de varios meses",
   "afterLongTime": "Luego de mucho tiempo",
-  "totalCoupons": "Cupones Totales"
+  "totalCoupons": "Cupones Totales",
+  "deleteAccount": "Eliminar cuenta",
+  "areYouSureToDeleteYourAccountOnceAnAccount": "Are you sure to delete your account? Once an account is deleted, it cannot be recovered again!",
+  "accountInfo": "Account Info",
+  "doYouWantToDeleteYourAccount": "Do you want to delete your account?"
 }
 
 

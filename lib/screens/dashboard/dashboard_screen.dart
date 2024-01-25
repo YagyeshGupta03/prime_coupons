@@ -51,7 +51,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       final Uri deepLink = initialLink.link;
       await Future.delayed(const Duration(milliseconds: 500));
       Get.find<ProductController>()
-          .getProductDetails(context, deepLink.toString());
+          .getProductDetails(context, '$productDetailsUrl${deepLink.toString()}');
     }
   }
 

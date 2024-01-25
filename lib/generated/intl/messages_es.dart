@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "aMonthAgo": MessageLookupByLibrary.simpleMessage("Hace un mes"),
         "aboutThisItem":
             MessageLookupByLibrary.simpleMessage("Sobre este Producto"),
+        "accountInfo": MessageLookupByLibrary.simpleMessage("Account Info"),
         "activateCoupon": MessageLookupByLibrary.simpleMessage("Activar cupón"),
         "addToFavorites":
             MessageLookupByLibrary.simpleMessage("Colocar en Favoritos?"),
@@ -43,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "allDeals": MessageLookupByLibrary.simpleMessage("Todas"),
         "allDiscounts":
             MessageLookupByLibrary.simpleMessage("Todos los Descuentos"),
+        "areYouSureToDeleteYourAccountOnceAnAccount":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure to delete your account? Once an account is deleted, it cannot be recovered again!"),
         "blog": MessageLookupByLibrary.simpleMessage("Blog"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "categories": MessageLookupByLibrary.simpleMessage("Categorías"),
@@ -68,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "defaultRank":
             MessageLookupByLibrary.simpleMessage("Rango Predeterminado"),
         "delete": MessageLookupByLibrary.simpleMessage("Remover"),
+        "deleteAccount":
+            MessageLookupByLibrary.simpleMessage("Eliminar cuenta"),
         "descriptionAndPicturesOfProductAreForReferenceOnly":
             MessageLookupByLibrary.simpleMessage(
                 "Imágenes y Descripción de productos son solo para referencia"),
@@ -77,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYouWantToDeleteThisProductFromFavorites":
             MessageLookupByLibrary.simpleMessage(
                 "Desea remover este producto de sus favoritos?"),
+        "doYouWantToDeleteYourAccount": MessageLookupByLibrary.simpleMessage(
+            "Do you want to delete your account?"),
         "doYouWantToLogout":
             MessageLookupByLibrary.simpleMessage("Deseas salir de tu cuenta?"),
         "favorites": MessageLookupByLibrary.simpleMessage("Favoritos"),
