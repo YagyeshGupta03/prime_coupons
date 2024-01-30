@@ -40,11 +40,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 if (controller.categoryList!.isNotEmpty) {
                   return GridView.builder(
                     padding: const EdgeInsets.symmetric(vertical: 20),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      mainAxisExtent: screenHeight(context) / 5,
+                      crossAxisSpacing: 7,
+                      mainAxisSpacing: 7,
+                      mainAxisExtent: 170,
                     ),
                     itemCount: controller.categoryList!.length,
                     itemBuilder: (BuildContext context, int index) {
@@ -105,31 +106,34 @@ class CategoryCard extends StatelessWidget {
         );
       },
       child: GridTile(
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: Colors.white),
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 70,
-                width: 70,
-                child: Image.network('$baseUrl${data.icons.toString()}',
-                    fit: BoxFit.fill),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                Intl.getCurrentLocale() == 'en'
-                    ? data.englishText.toString()
-                    : data.spanishText.toString(),
-                style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              )
-            ],
+        child: Card(
+          elevation: 2,
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: Colors.white),
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 70,
+                  width: 70,
+                  child: Image.network('$baseUrl${data.icons.toString()}',
+                      fit: BoxFit.fill),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  Intl.getCurrentLocale() == 'en'
+                      ? data.englishText.toString()
+                      : data.spanishText.toString(),
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                )
+              ],
+            ),
           ),
         ),
       ),

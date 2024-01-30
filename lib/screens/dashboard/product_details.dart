@@ -434,7 +434,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           Text(
                             '\$ ${widget.data.finalPrice}',
                             style: TextStyle(
-                                fontSize: 19,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w600,
                                 color: AppUi().primaryColor),
                           ),
@@ -442,7 +442,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           Text(
                             '\$ ${widget.data.regularPrice}',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w600,
                                 decoration: TextDecoration.lineThrough,
                                 color: Colors.black.withOpacity(.6)),
@@ -454,7 +454,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         elevation: 0,
                         color: AppUi().filterClr,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Text(
                             '-${widget.data.discount} Off',
                             style: const TextStyle(
@@ -466,8 +466,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                       const SizedBox(width: 7),
-                      ElevatedButton(
-                        onPressed: () {
+                      InkWell(
+                        onTap: () {
                           if (Intl.getCurrentLocale() == 'en') {
                             _getCoupon(context, widget.data.promoCode,
                                 widget.data.standardLinkEnglish);
@@ -476,19 +476,25 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 widget.data.standardLinkSpanish);
                           }
                         },
-                        style: ElevatedButton.styleFrom(
-                            elevation: 1,
-                            backgroundColor: AppUi().primaryColor),
-                        child: SizedBox(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 12),
-                              child: Text(
-                                S.of(context).activateCoupon,
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                        // style: ElevatedButton.styleFrom(
+                        //     elevation: 1,
+                        //     backgroundColor: AppUi().primaryColor),
+                        child: Card(
+                          elevation: 1,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          color: AppUi().primaryColor,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 7),
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 12),
+                                child: Text(
+                                  S.of(context).activateCoupon,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -800,73 +806,79 @@ void login(context) {
             ],
           ),
         ),
-        content: SizedBox(
-          height: 230,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(S.of(context).signInToCreateYourFavoriteList,
-                  style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black),
-                  textAlign: TextAlign.center),
-              const SizedBox(height: 30),
-              // InkWell(
-              //   onTap: () {
-              //     Navigator.pushNamed(context, '/login');
-              //   },
-              //   child: Card(
-              //     shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(10)),
-              //     color: AppUi().primaryColor,
-              //     child: Container(
-              //       height: 40,
-              //       width: 40,
-              //       decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(10),
-              //           color: AppUi().primaryColor),
-              //       child: const Center(
-              //         child: Icon(Icons.arrow_forward_ios, color: Colors.white),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              InkWell(
-                onTap: () {},
-                child: Card(
-                  color: Colors.blue,
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Container(
-                    height: 50,
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(ImageConst().facebook,
-                            height: 30, width: 30),
-                        const SizedBox(width: 20),
-                        Text(
-                          S.of(context).signInWithFacebook,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            // fontFamily: fontFamily,
-                          ),
+        content: GetBuilder<FavoriteController>(
+          builder: (FavoriteController controller) {
+            return SizedBox(
+              height: 230,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(S.of(context).signInToCreateYourFavoriteList,
+                      style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
+                      textAlign: TextAlign.center),
+                  const SizedBox(height: 30),
+                  // InkWell(
+                  //   onTap: () {
+                  //     Navigator.pushNamed(context, '/login');
+                  //   },
+                  //   child: Card(
+                  //     shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(10)),
+                  //     color: AppUi().primaryColor,
+                  //     child: Container(
+                  //       height: 40,
+                  //       width: 40,
+                  //       decoration: BoxDecoration(
+                  //           borderRadius: BorderRadius.circular(10),
+                  //           color: AppUi().primaryColor),
+                  //       child: const Center(
+                  //         child: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  InkWell(
+                    onTap: () {
+                      controller.signInWithFacebook(context);
+                    },
+                    child: Card(
+                      color: Colors.blue,
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Container(
+                        height: 50,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
+                        child: controller.loading
+                            ? Center(
+                            child: CircularProgressIndicator(
+                                color: AppUi().primaryColor))
+                            : Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(ImageConst().facebook,
+                                height: 30, width: 30),
+                            const SizedBox(width: 20),
+                            Text(
+                              S.of(context).signInWithFacebook,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                // fontFamily: fontFamily,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              GetBuilder<FavoriteController>(
-                builder: (FavoriteController controller) {
-                  return InkWell(
+                  const SizedBox(height: 20),
+                  InkWell(
                     onTap: () {
                       controller.signInWithGoogleWithFav(context);
                     },
@@ -902,11 +914,11 @@ void login(context) {
                               ),
                       ),
                     ),
-                  );
-                },
-              )
-            ],
-          ),
+                  )
+                ],
+              ),
+            );
+          },
         ),
         actions: [
           TextButton(

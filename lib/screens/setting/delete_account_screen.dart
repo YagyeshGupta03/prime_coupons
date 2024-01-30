@@ -1,7 +1,6 @@
 import 'package:clipeate_project/controllers/global_controllers.dart';
 import 'package:clipeate_project/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:material_dialogs/dialogs.dart';
 import 'package:material_dialogs/widgets/buttons/icon_button.dart';
@@ -42,19 +41,19 @@ class _DeleteScreenState extends State<DeleteScreen> {
           children: [
              Text(
               S.of(context).deleteAccount,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 18, fontWeight: FontWeight.w600, color: Colors.red),
             ),
             const SizedBox(height: 20),
              Text(
               S.of(context).areYouSureToDeleteYourAccountOnceAnAccount,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
              Text(
               S.of(context).accountInfo,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 15, fontWeight: FontWeight.w600, color: Colors.red),
             ),
             const SizedBox(height: 10),

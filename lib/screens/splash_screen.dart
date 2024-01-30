@@ -60,8 +60,6 @@ import '../widgets/constants.dart';
 //   }
 // }
 
-//
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -75,7 +73,6 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     credentialController.connectionChecking(context);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -100,11 +97,14 @@ class _SplashScreenState extends State<SplashScreen> {
                     fontWeight: FontWeight.w800,
                     color: Colors.black)),
             const SizedBox(height: 15),
-            Text(S.of(context).onlyAmazonCouponsAndDiscounts,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black.withOpacity(.5))),
+            Text(
+              S.of(context).onlyAmazonCouponsAndDiscounts,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.black.withOpacity(.5),
+              ),
+            ),
           ],
         ),
       ),

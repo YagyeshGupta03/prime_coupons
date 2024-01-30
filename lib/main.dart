@@ -21,6 +21,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'controllers/common_controllers.dart';
+import 'controllers/global_controllers.dart';
 import 'generated/l10n.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -30,6 +31,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   tz.initializeTimeZones();
+  credentialController.getLanguage();
   runApp(
     const MyApp(),
   );
@@ -38,12 +40,8 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final LanguageController _languageController =
-        Get.put(LanguageController());
-
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return GetMaterialApp(
@@ -67,7 +65,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      locale: Locale(_languageController.currentLanguage.toString()),
+      locale: Locale(credentialController.language.toString()),
       supportedLocales: S.delegate.supportedLocales,
       initialRoute: "/",
       routes: {

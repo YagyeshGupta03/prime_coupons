@@ -37,7 +37,7 @@ class NoConnectionScreen extends StatelessWidget {
                 onPressed: () {
                  credentialController.connectionChecking(context);
                 },
-                child:  Text(S.of(context).refresh, style: const TextStyle(color: Colors.white),)),
+                child:  Text(S.of(context).refresh, style: TextStyle(color: AppUi().primaryColor),),),
           ],
         ),
       ),
