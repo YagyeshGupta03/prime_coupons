@@ -237,7 +237,8 @@ class _FilterResultScreenState extends State<FilterResultScreen> {
                       '$offset',
                       '$limit',
                       false,
-                      false, true);
+                      false,
+                      true);
                 }
               }
               return false;
@@ -276,8 +277,8 @@ class _FilterResultScreenState extends State<FilterResultScreen> {
                         )
                       : controller.filterList!.isNotEmpty
                           ? Column(
-                            children: [
-                              GridView.builder(
+                              children: [
+                                GridView.builder(
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
@@ -285,34 +286,38 @@ class _FilterResultScreenState extends State<FilterResultScreen> {
                                     mainAxisSpacing: 10.0,
                                   ),
                                   shrinkWrap: true,
-                                  padding: const EdgeInsets.symmetric(vertical: 10),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
                                   physics: const NeverScrollableScrollPhysics(),
                                   itemCount: controller.filterList!.length,
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return SearchCard(
                                         data: controller.filterList![index],
                                         onTap: () {
                                           Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ProductDetailsScreen(
-                                                          data: controller
-                                                                  .filterList![
-                                                              index])));
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProductDetailsScreen(
+                                                data: controller
+                                                    .filterList![index],
+                                              ),
+                                            ),
+                                          );
                                         });
                                   },
                                 ),
-                              if (controller.afterLoading)
-                                const Row(
-                                  children: [
-                                    ShimmerCard(),
-                                    SizedBox(width: 10),
-                                    ShimmerCard(),
-                                  ],
-                                ),
-                            ],
-                          )
+                                if (controller.afterLoading)
+                                  const Row(
+                                    children: [
+                                      ShimmerCard(),
+                                      SizedBox(width: 10),
+                                      ShimmerCard(),
+                                    ],
+                                  ),
+                              ],
+                            )
                           : Padding(
                               padding: const EdgeInsets.symmetric(vertical: 20),
                               child: Center(
