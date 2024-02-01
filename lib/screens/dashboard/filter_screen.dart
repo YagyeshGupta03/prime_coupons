@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:clipeate_project/controllers/category_controller.dart';
 import 'package:clipeate_project/controllers/common_controllers.dart';
 import 'package:clipeate_project/screens/dashboard/filter_result_screen.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
-
 import '../../generated/l10n.dart';
 
 class FilterScreen extends StatefulWidget {
@@ -22,7 +20,6 @@ class FilterScreen extends StatefulWidget {
 class _FilterScreenState extends State<FilterScreen> {
   double _minValue = 25.0;
   double _maxValue = 75.0;
-
   String status = '';
   String minDis = '';
   String maxDis = '';

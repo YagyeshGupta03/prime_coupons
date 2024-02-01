@@ -107,7 +107,7 @@ class CategoryCard extends StatelessWidget {
       },
       child: GridTile(
         child: Card(
-          elevation: 2,
+          elevation: 0.2,
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), color: Colors.white),

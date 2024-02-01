@@ -853,10 +853,10 @@ void login(context) {
                         height: 50,
                         padding: const EdgeInsets.symmetric(
                             vertical: 10, horizontal: 10),
-                        child: controller.loading
-                            ? Center(
+                        child: controller.fbLoading
+                            ? const Center(
                             child: CircularProgressIndicator(
-                                color: AppUi().primaryColor))
+                                color: Colors.white))
                             : Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [

@@ -1,6 +1,5 @@
 import 'package:clipeate_project/helper/api_urls.dart';
 import 'package:clipeate_project/helper/models/FavoriteModel.dart' as favorite;
-import 'package:clipeate_project/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +7,12 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:intl/intl.dart';
 import '../helper/http_helper.dart';
 import 'global_controllers.dart';
 
 class FavoriteController extends GetxController {
   bool loading = false;
+  bool fbLoading = false;
   List<favorite.Data>? favoriteList = [];
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
@@ -145,7 +144,7 @@ class FavoriteController extends GetxController {
   Future<UserCredential?> signInWithFacebook(context) async {
     String fcmToken = '';
 
-    loading = true;
+    fbLoading = true;
     update();
 
     try {
@@ -163,43 +162,39 @@ class FavoriteController extends GetxController {
 
       fcmToken = await _firebaseMessaging.getToken() ?? '';
 
-      print(userCredential);
-      print(user!.email.toString());
-      print(user.displayName.toString());
-      print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+      final NetworkHelper networkHelper = NetworkHelper(url: userSignInUrl);
+      var reply = await networkHelper.postData({
+        'name': '${user?.displayName}',
+        'oauth_provider': 'google',
+        'oauth_id': fcmToken.toString(),
+        'email': '${user?.email}',
+      });
 
-      // final NetworkHelper networkHelper = NetworkHelper(url: userSignInUrl);
-      // var reply = await networkHelper.postData({
-      //   'name': '${user?.displayName}',
-      //   'oauth_provider': 'google',
-      //   'oauth_id': fcmToken.toString(),
-      //   'email': '${user?.email}',
-      // });
-      //
-      // print(reply);
-      //
-      // if (reply['status'] == 1) {
-      //   await credentialController.setUserInfo(
-      //       reply['data']['user_id'], reply['data']['email']);
-      //   // await Navigator.pushNamed(context, '/dashboard');
-      //   getFavCoupons(true);
-      //   Navigator.pop(context);
-      //   Fluttertoast.showToast(
-      //       msg: 'Signed in successfully',
-      //       gravity: ToastGravity.SNACKBAR,
-      //       backgroundColor: Colors.green);
-      //   loading = false;
-      //   update();
-      // } else {
-      //   Fluttertoast.showToast(
-      //       msg: reply['msg'],
-      //       gravity: ToastGravity.SNACKBAR,
-      //       backgroundColor: Colors.red);
-      //   loading = false;
-      //   update();
-      // }
+      print(reply);
+
+      if (reply['status'] == 1) {
+        await credentialController.setUserInfo(
+            reply['data']['user_id'], reply['data']['email']);
+        getFavCoupons(true);
+        Navigator.pop(context);
+        Fluttertoast.showToast(
+            msg: 'Signed in successfully',
+            gravity: ToastGravity.SNACKBAR,
+            backgroundColor: Colors.green);
+        loading = false;
+        update();
+      } else {
+        Fluttertoast.showToast(
+            msg: reply['msg'],
+            gravity: ToastGravity.SNACKBAR,
+            backgroundColor: Colors.red);
+        loading = false;
+        update();
+      }
+        fbLoading = false;
+        update();
     } catch (error) {
-      loading = false;
+      fbLoading = false;
       update();
       print("Google Sign In Error: $error");
       return null;
