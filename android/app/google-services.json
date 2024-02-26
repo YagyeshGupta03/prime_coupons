@@ -7,41 +7,36 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:538522588171:android:3ebb848901321f4240230e",
-        "android_client_info": {
-          "package_name": "com.app.clipeate"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC1V3DdFeBwFBR47b1-XNkfiedTkOiKds0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:538522588171:android:d7d038c2f0b4a8d140230e",
         "android_client_info": {
           "package_name": "com.app.prime_coupons"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "538522588171-estmkd5ehm6f1k51rl127reaj7qgocqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.prime_coupons",
+            "certificate_hash": "e8ed1144dc6c4b5116ca6a39b019b9d4b37716df"
+          }
+        },
+        {
+          "client_id": "538522588171-gh5spbgmilcd68917it9hugoas36720r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.prime_coupons",
+            "certificate_hash": "cdbf5ae0e0eb731668a8ad4938d8f991cce20621"
+          }
+        },
+        {
+          "client_id": "538522588171-t9ln5hb4fdp6aq7ppm6g26a06lim1cqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.prime_coupons",
+            "certificate_hash": "3c8a3c2ee3b483b54a001cb4962685ecfe6bc995"
+          }
+        },
         {
           "client_id": "538522588171-dh0q0dbm294uql7kfhh5c6dgm2a9qi0a.apps.googleusercontent.com",
           "client_type": 3
