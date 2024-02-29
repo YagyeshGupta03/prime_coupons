@@ -85,6 +85,7 @@ class MyApp extends StatelessWidget {
         "/terms": (context) => const TermsAndConditions(),
         "/privacy": (context) => const PrivacyPolicy(),
         "/blog": (context) => const Blog(),
+        "/login": (context) => const LoginScreen(),
       },
     );
   }
